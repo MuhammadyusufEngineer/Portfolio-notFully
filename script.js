@@ -8,7 +8,7 @@ var offset = 0;
 body.style.height = Math.floor(height) + "px";
 
 function smoothScroll() {
-    offset += (window.pageYOffset - offset) * speed;
+    offset += ((window.pageYOffset - offset) * speed) /100;
 
     var scroll = "translateY(-" + offset + "px) translateZ(0)";
     scrollWrap.style.transform = scroll;
