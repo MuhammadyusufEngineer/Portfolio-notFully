@@ -8,7 +8,7 @@ var offset = 0;
 body.style.height = Math.floor(height) + "px";
 
 function smoothScroll() {
-    offset += ((window.pageYOffset - offset) * speed) /100;
+    offset += ((window.pageYOffset - offset) * speed);
 
     var scroll = "translateY(-" + offset + "px) translateZ(0)";
     scrollWrap.style.transform = scroll;
@@ -25,7 +25,7 @@ const callDistort = function () {
     const diff = newPos - currentPos;
     const speed = diff * 0.35;
 
-    content.style.transform = "skewY(" + speed + "deg)";
+    content.style.transform = "skewY(" + (speed / 100) + "deg)";
     currentPos = newPos;
     requestAnimationFrame(callDistort);
 };
